@@ -1,0 +1,49 @@
+@(title: String)
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>@title</title>
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+        <script src="@routes.Assets.at("javascripts/hello.js")" type="text/javascript"></script>
+    </head>
+    <body>
+    	<div style="width: 100%; text-align: center">
+			<h1>Menu Principal</h1>
+			<h2>"Quem Pegou"</h2>
+    	</div>
+    	<fieldset>
+			@helper.form(action = routes.Book.process(), 'id -> "process") {
+		    	<table style="text-align: center; width: 100%">
+		    		<tr>
+		    			<td>
+		    				<button type="submit" name="cadastrar" value="cadastrar">Cadastrar Novo Livro</button>
+		    			</td>
+		    		</tr>
+		    		<tr>
+		    			<td>
+		    				<button type="submit" name="solicitar" value="solicitar">Solicitar Emprestimo</button>
+		    			</td>
+		    		</tr>
+		    		<tr>
+		    			<td>
+		    				<button type="submit" name="liberar" value="liberar">Liberar Emprestimos</button>
+		    			</td>
+		    		</tr>
+		    		<tr>
+		    			<td>
+		    				<button type="submit" name="quem_pegou" value="quem_pegou">Quem Pegou</button>
+		    			</td>
+		    		</tr>
+		    		<tr>
+		    			<td>
+		    				<button type="submit" name="sair" value="sair">Sair</button>
+		    			</td>
+		    		</tr>
+		    	</table>
+			}
+		</fieldset>
+    </body>
+</html>

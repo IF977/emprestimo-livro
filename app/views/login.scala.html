@@ -1,0 +1,45 @@
+@(title: String)(content: Html)
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>@title</title>
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+        <script src="@routes.Assets.at("javascripts/hello.js")" type="text/javascript"></script>
+    </head>
+    <body>
+    	<fieldset>
+    		<legend align="center"><h1>Sistema de Emprestimo de Livros "Quem pegou" - Entrar</h1></legend>
+   			@helper.form(action = routes.Application.process(), 'id -> "process") {
+	    	<table style="width: 100%;">
+	    		<tr>
+	    			<td align="right" width="40%">
+	    				E-mail:
+	    			</td>
+	    			<td width="50%">
+	    				<input type="text" value="" id="email" name="email"/>
+	    			</td>
+	    		</tr>
+	    		<tr>
+	    			<td align="right" width="40%">
+	    				Senha:
+	    			</td>
+	    			<td width="50%">
+	    				<input type="password" value="" id="password" name="password" />
+	    			</td>
+	    		</tr>
+	    		<tr>
+	    			<td align="right" width="40%">
+				    	<button type="submit" name="entrar" value="entrar">Entrar</button>
+	    			</td>
+	    			<td width="50%">
+				    	<button type="submit" name="cadastrar" value="cadastrar">Cadastrar</button>
+	    			</td>
+	    		</tr>
+	    	</table>
+	    	}
+    	</fieldset>
+    </body>
+</html>
