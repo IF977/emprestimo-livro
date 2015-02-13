@@ -1,4 +1,4 @@
-@(title: String)
+@(title: String)(message: String)
 
 <!DOCTYPE html>
 
@@ -10,6 +10,13 @@
         <script src="@routes.Assets.at("javascripts/hello.js")" type="text/javascript"></script>
     </head>
     <body>
+    	<div align="center" style="width: 100%;">
+    		<strong>
+	    	@message
+	    	</strong>
+    	</div>
+    	<br/>
+
     	<div style="width: 100%; text-align: center">
 			<h1>Menu Principal</h1>
 			<h2>"Quem Pegou"</h2>
@@ -24,17 +31,22 @@
 		    		</tr>
 		    		<tr>
 		    			<td>
-		    				<button type="submit" name="solicitar" value="solicitar">Solicitar Emprestimo</button>
+		    				<button type="submit" name="solicitar" value="solicitar">Solicitar o livro de alguem Emprestado</button>
 		    			</td>
 		    		</tr>
 		    		<tr>
 		    			<td>
-		    				<button type="submit" name="liberar" value="liberar">Liberar Emprestimos</button>
+		    				<button type="submit" name="liberar" value="liberar">Verificar se alguem solicitou meus livros</button>
 		    			</td>
 		    		</tr>
 		    		<tr>
 		    			<td>
-		    				<button type="submit" name="quem_pegou" value="quem_pegou">Quem Pegou</button>
+		    				<button type="submit" name="devolver" value="devolver">Devolver Livro que eu peguei emprestado</button>
+		    			</td>
+		    		</tr>
+		    		<tr>
+		    			<td>
+		    				<button type="submit" name="quem_pegou" value="quem_pegou">Quem Pegou meus livros</button>
 		    			</td>
 		    		</tr>
 		    		<tr>

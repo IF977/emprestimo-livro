@@ -21,14 +21,21 @@ public class BookModel extends Model {
 	
 	@Required
 	private String name;
-	
+
+	//Dono do livro
 	@ManyToOne
 	@JoinColumn(name="owner_id")
 	private UserModel owner;
 	
+	//Aquele "Que Pegou"
 	@ManyToOne
 	@JoinColumn(name="holder_id")	
 	private UserModel holder;
+
+	//Aquele que solicita o livro para emprestimo
+	@ManyToOne
+	@JoinColumn(name="requester_id")	
+	private UserModel requester;
 
 	public Integer getId() {
 		return id;
@@ -61,4 +68,13 @@ public class BookModel extends Model {
 	public void setHolder(UserModel holder) {
 		this.holder = holder;
 	}
+
+	public UserModel getRequester() {
+		return requester;
+	}
+
+	public void setRequester(UserModel requester) {
+		this.requester = requester;
+	}
+	
 }

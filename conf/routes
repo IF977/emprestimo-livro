@@ -10,6 +10,9 @@ GET     /book_menu                  controllers.Book.index()
 GET     /book_process               controllers.Book.process()
 GET     /book_register              controllers.Book.new_book()
 GET     /book_request               controllers.Book.request_book()
+GET     /book_borrow                controllers.Book.borrow_book()
+GET     /book_borrowed              controllers.Book.borrowed_book()
+GET     /book_return                controllers.Book.return_book()
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)

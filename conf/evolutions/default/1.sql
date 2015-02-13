@@ -8,6 +8,7 @@ create table book_model (
   name                      varchar(255),
   owner_id                  varchar(255),
   holder_id                 varchar(255),
+  requester_id              varchar(255),
   constraint pk_book_model primary key (id))
 ;
 
@@ -25,6 +26,8 @@ alter table book_model add constraint fk_book_model_owner_1 foreign key (owner_i
 create index ix_book_model_owner_1 on book_model (owner_id);
 alter table book_model add constraint fk_book_model_holder_2 foreign key (holder_id) references user_model (email);
 create index ix_book_model_holder_2 on book_model (holder_id);
+alter table book_model add constraint fk_book_model_requester_3 foreign key (requester_id) references user_model (email);
+create index ix_book_model_requester_3 on book_model (requester_id);
 
 
 

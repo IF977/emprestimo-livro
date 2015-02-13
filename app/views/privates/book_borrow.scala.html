@@ -18,14 +18,14 @@
     	<br/>
 
     	<fieldset>
-    		<legend align="center"><h1>Solicitar Livro(s)</h1></legend>
-			@helper.form(action = routes.Book.request_book(), 'id -> "book_request") {
+    		<legend align="center"><h1>Liberar Emprestimo do(s) Livro(s)</h1></legend>
+			@helper.form(action = routes.Book.borrow_book(), 'id -> "book_borrow") {
 				@for(book <- booksNames) {
-					<input type='checkbox' id="@book.getId" name='@book.getId' value=@book.getId>@book.getName (email: @book.getOwner.getEmail)<br>
+					<input type='checkbox' id="@book.getId" name='@book.getId' value=@book.getId>@book.getName (solicitante: @book.getRequester.getEmail)<br>
 				}
 
 				<br/>
-			   	<input type="submit" name="solicitar" value="Solicitar">
+			   	<input type="submit" name="emprestar" value="Emprestar">
 			   	<input type="submit" name="voltar" value="Voltar">
 			}
 		</fieldset>
