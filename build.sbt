@@ -10,5 +10,6 @@ libraryDependencies ++= Seq(
   	javaEbean,
 	javaJpa,
 	"org.hibernate" % "hibernate-entitymanager" % "3.6.9.Final",
-	"mysql" % "mysql-connector-java" % "5.1.18"
+	"mysql" % "mysql-connector-java" % "5.1.18",
+	"postgresql" % "postgresql" % "9.1-901-1.jdbc4"
 )

@@ -21,22 +21,18 @@ create sequence book_model_seq;
 
 create sequence user_model_seq;
 
-alter table book_model add constraint fk_book_model_owner_1 foreign key (owner_id) references user_model (email) on delete restrict on update restrict;
+alter table book_model add constraint fk_book_model_owner_1 foreign key (owner_id) references user_model (email);
 create index ix_book_model_owner_1 on book_model (owner_id);
-alter table book_model add constraint fk_book_model_holder_2 foreign key (holder_id) references user_model (email) on delete restrict on update restrict;
+alter table book_model add constraint fk_book_model_holder_2 foreign key (holder_id) references user_model (email);
 create index ix_book_model_holder_2 on book_model (holder_id);
 
 
 
 # --- !Downs
 
-SET REFERENTIAL_INTEGRITY FALSE;
+drop table if exists book_model cascade;
 
-drop table if exists book_model;
-
-drop table if exists user_model;
-
-SET REFERENTIAL_INTEGRITY TRUE;
+drop table if exists user_model cascade;
 
 drop sequence if exists book_model_seq;
 
